@@ -25,7 +25,8 @@ pipeline{
      stage("deploy to test") {
             steps {
                 // deploy the project
-                echo 'ggg'
+                deploy adapters: [tomcat9(credentialsId: 'tomcat10details', path: '', url: 'http://192.168.1.33:8080')], contextPath: '/app', war: '**/*.war'
+                echo 'project deployed'
             }   
         }
     }
