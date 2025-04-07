@@ -25,7 +25,7 @@ pipeline{
      stage("deploy to test") {
             steps {
                 // deploy the project
-                
+                echo 'ggg'
             }   
         }
     }
