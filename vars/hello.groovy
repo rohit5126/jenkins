@@ -1,3 +1,3 @@
 def call(){
-  echo "hello this is first groovy file"
+  echo "hello this is file"
 }
