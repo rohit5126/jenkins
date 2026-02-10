@@ -1,7 +1,6 @@
-def call(String credID){
-  withCredentials([usernamePassword(credentialsId:"${credID}",passwordVariable:"dockerhubPass",usernameVariable:"dockerhubUser")]) {
-      sh "docker login -u ${env.dockerhubUser} -p ${env.dockerhubPass}"
-  
+def call(String imagename){
+  withCredentials([usernamePassword(credentialsId: "dockerhub", passwordVariable: "dockerhubPass", usernameVariable: "dockerhubUser")]) {
+      sh "docker login -u ${dockerhubUser} -p ${dockerhubPass}"
   }
-  sh "docker push rohit5126/django_app:latest"
+  sh "docker push ${imagename}"
 }
